@@ -50,6 +50,15 @@ function App() {
     setBirthdays(birthdays.filter(birthday => birthday.id !== id));
   };
 
+  // 5. Função para verificar se é o dia do aniversário
+  const isToday = (bdayDate: string): boolean => {
+    const today = new Date();
+    const bday = new Date(bdayDate + 'T00:00:00'); // Garante que a data seja interpretada corretamente
+
+    // Compara o dia e o mês
+    return today.getMonth() === bday.getMonth() && today.getDate() === bday.getDate();
+  };
+
   return (
     <div className="container">
       <div className="app-card">
@@ -88,7 +97,9 @@ function App() {
             birthdays.map((bday) => (
               <div key={bday.id} className="birthday-item">
                 <div className="info">
-                  <h3>{bday.name}</h3>
+                  <h3 style={{ color: isToday(bday.date) ? '#e74c3c' : '#2c3e50' }}>
+                    {bday.name} {isToday(bday.date) && "🎂 É hoje!"}
+                  </h3>
                   <p>{new Date(bday.date + 'T00:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                 </div>
                 <div className="actions">
