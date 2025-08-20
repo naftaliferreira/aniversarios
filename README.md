@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+# Alerta de Aniversários
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Detalhe do projeto
 
-Currently, two official plugins are available:
+![captura](./src/media/image/Captura.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este é um aplicativo simples para gerenciar e ser lembrado de datas de aniversário. A aplicação permite adicionar, remover e visualizar aniversários, com um alerta especial para as datas que caem no dia atual.
 
-## Expanding the ESLint configuration
+## Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: Biblioteca JavaScript para a construção da interface de usuário.
+- **Vite**: Ferramenta de build otimizada para um ambiente de desenvolvimento rápido.
+- **TypeScript**: Adiciona tipagem estática ao JavaScript para maior segurança e escalabilidade.
+- **Local Storage**: Utilizado para persistir os dados dos aniversários diretamente no navegador do usuário, garantindo que as informações não sejam perdidas ao fechar a página.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Adicionar Aniversário**: Um formulário intuitivo para cadastrar o nome e a data de pessoas queridas.
+- **Remover Aniversário**: Possibilidade de remover qualquer aniversário da lista com um único clique.
+- **Alerta do Dia**: O aplicativo exibe uma mensagem de destaque (`🎂 É hoje!`) ao lado do nome das pessoas que fazem aniversário no dia.
+- **Persistência de Dados**: Todos os aniversários são salvos no `Local Storage` do navegador, mantendo a lista intacta mesmo após recarregar a página.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Como Executar o Projeto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Para rodar a aplicação localmente, siga os passos abaixo no seu terminal:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Instale as dependências:**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    npm install
+    ```
+
+2. **Inicie o servidor de desenvolvimento:**
+
+    ```bash
+    npm run dev
+    ```
+
+A aplicação estará disponível em `http://localhost:5173/`.
+
+---
+
+### Estrutura do Projeto
+
+O código principal está localizado no arquivo `src/App.tsx`. A lógica de estado, o gerenciamento de dados no `Local Storage` e a verificação da data atual estão todos contidos neste componente.
+
+A lógica de estilização está no arquivo `src/App.css`, que define a aparência da aplicação.
+
+---
+
+### Funcionalidades Futuras
+
+O projeto pode ser expandido com as seguintes funcionalidades para se tornar ainda mais robusto:
+
+1. **Notificações**: Implementar notificações no navegador para alertar o usuário sobre os aniversários do dia, mesmo que a página não esteja aberta.
+2. **Ordenar por Data**: Adicionar a opção de ordenar a lista de aniversários por data, facilitando a visualização dos próximos a acontecer.
+3. **Temas**: Adicionar um seletor de tema (claro/escuro) para personalizar a interface.
+
+---
+
+Com esta documentação, seu projeto está completo e pronto para ser exibido. Ele demonstra um excelente domínio do React, do gerenciamento de estado e da persistência de dados.
+
+O que você achou da documentação? Podemos considerar este projeto finalizado?
