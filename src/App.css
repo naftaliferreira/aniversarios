@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.app-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #34495e;
+  margin-bottom: 25px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.card {
-  padding: 2em;
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #7f8c8d;
 }
 
-.read-the-docs {
-  color: #888;
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.birthdays-list {
+  text-align: left;
+}
+
+.birthdays-list h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.no-birthdays-message {
+  color: #95a5a6;
+  font-style: italic;
+  text-align: center;
+}
+
+.birthday-item {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.birthday-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.birthday-item .info {
+  flex-grow: 1;
+}
+
+.birthday-item .info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.birthday-item .info p {
+  margin: 5px 0 0;
+  color: #7f8c8d;
+}
+
+.birthday-item .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.birthday-item button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.birthday-item button svg {
+  width: 20px;
+  height: 20px;
+  color: #e74c3c;
 }
